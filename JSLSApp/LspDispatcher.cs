@@ -634,5 +634,8 @@ internal static class LspDispatcher
      * Because the cost of sending messages between them is non-zero yes, but it is nothing
      * compared to the cost of storing all this allocated memory in this C# program in the same program
      * as the UI and having the garbage collector explode.
+     * 
+     * I think I want to completely stay away from writing code on this project until I hit 199.9 lbs.
+     * I am quick to get obsessed with things so taking some time away I think is a good thing.
      */
 }
