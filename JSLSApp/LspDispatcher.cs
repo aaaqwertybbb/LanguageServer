@@ -604,4 +604,17 @@ internal static class LspDispatcher
     - cache syntax highlighting for the sections you've syntax highlighted drawn
 
      */
+
+    /*
+     * If anyone wants to know what the next steps would be for something like this:
+     * you could consider changing all the strings to ints
+     * by finding a hash function that results in a unique number over the closed set of all keywords
+     * 
+     * Then any identifier collisions would need to be verified character by character
+     * but they should be rare.
+     * 
+     * This removes a MASSIVE amount of strings.
+     * The lexical scope isn't about indexing a string it should be some kind of non-allocated value
+     * like the hash
+     */
 }
