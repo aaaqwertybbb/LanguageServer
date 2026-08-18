@@ -627,5 +627,12 @@ internal static class LspDispatcher
      * 
      * By splitting them out, the cost of the AST isn't nearly as large relative to the total object count
      * and by using one you greatly simplify the logic.
+     * 
+     * My initial thought was that adding a server-client architecture would slow the app down.
+     * But it is the complete opposite (maybe you could find a way but I couldn't).
+     * 
+     * Because the cost of sending messages between them is non-zero yes, but it is nothing
+     * compared to the cost of storing all this allocated memory in this C# program in the same program
+     * as the UI and having the garbage collector explode.
      */
 }
