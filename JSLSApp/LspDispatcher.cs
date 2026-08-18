@@ -616,5 +616,16 @@ internal static class LspDispatcher
      * This removes a MASSIVE amount of strings.
      * The lexical scope isn't about indexing a string it should be some kind of non-allocated value
      * like the hash
+     * 
+     * ========
+     * 
+     * One of the things I did very wrong in the past was trying to flatten the AST into a single array.
+     * I highly recommend NOT doing this after years of doing this.
+     * 
+     * The main reason I had to do that was having the "language server" and "client" being the same app
+     * and thus my GC overhead was massive.
+     * 
+     * By splitting them out, the cost of the AST isn't nearly as large relative to the total object count
+     * and by using one you greatly simplify the logic.
      */
 }
